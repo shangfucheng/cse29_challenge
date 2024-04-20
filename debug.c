@@ -2,7 +2,8 @@
 
 int main(int argc, char *argv[]){
         char alpa[27];
-        for (int i = 0; i < sizeof(alpa); i++){
+        int i;
+        for (i = 0; i < sizeof(alpa); i++){
                 // do not use index based iteration for the alpa array
                 *alpa = 'a' + i;
                 *alpa += sizeof(char);
