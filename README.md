@@ -3,7 +3,7 @@
 ## Part 1: Debugging the Given Code
 
 ### Problem Description
-You are given a piece of code that is intended to print out all alphabet characters from 'a' to 'z' inclusive. However, there are some issues with the code preventing it from functioning correctly. Your task is to debug the code and ensure it prints out the correct characters.
+You are given a piece of code in `debug.c` that is intended to print out all alphabet characters from 'a' to 'z' inclusive. However, there are some issues with the code preventing it from functioning correctly. Your task is to debug the code and ensure it prints out the correct characters.
 
 ### Debugging Steps
 1. **Identify the Issue**: Start by carefully reading through the code to identify any obvious errors or logical mistakes. There are only 26 characters in alphabet, why the array has size of 27?
@@ -23,10 +23,10 @@ abcdefghijklmnopqrstuvwxyz
 ## Part 2: Implementing strstr Function
 
 ### Problem Description
-You are tasked with implementing the `strstr` function, which finds the first occurrence of a substring within a string. The `strstr` function is commonly used in C programming for string manipulation.
+You are tasked with implementing the `custom_strstr` function in `strstr.c`, which finds the first occurrence of a substring within a string. There is a  `strstr` function in <string.h> library that is commonly used in C programming for string manipulation. 
 
 ### Explanation
-The `strstr` function takes two input strings: the haystack and the needle. It searches for the needle within the haystack and returns a pointer to the first occurrence of the needle in the haystack. If the needle is not found, the function returns `NULL`.
+The `custom_strstr` function takes two input strings: the haystack and the needle. It searches for the needle within the haystack and returns a pointer to the first occurrence of the needle in the haystack. If the needle is not found, the function returns `NULL`.
 
 #### Algorithm
 1. Iterate through the haystack string.
@@ -37,7 +37,13 @@ The `strstr` function takes two input strings: the haystack and the needle. It s
 6. If the end of the haystack is reached without finding a match, return `NULL` to indicate that the needle is not present in the haystack.
 
 ### Example Input & Output:
-##### Enter the haystack string: hello, world
-##### Enter the needle string: world
-##### 'world' found at position 7
+```
+Enter the haystack string: hello, world
+Enter the needle string: world
+'world' found at position 7
+```
 
+### Compile and Test:
+```
+gcc -o strstr -Wall -std=gnu99 strstr.c
+```
