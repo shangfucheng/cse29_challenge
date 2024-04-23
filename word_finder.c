@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX_INPUT 100   // Max input size
+#define MAX_INPUT 300   // Max input size
 void remove_newline(char *str);
 
 // Given a String target_str, find word_to_find in target_str
