@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
 	// target_str is user input from terminal
     char target_str[MAX_INPUT];
 	// the word to look for in target_str
-	char* word_to_find = "29";
+	char* word_to_find = "bug";
 
 	// get user input string
     printf("Enter the target_str: ");
