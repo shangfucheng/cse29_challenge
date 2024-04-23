@@ -4,12 +4,11 @@ int main(int argc, char *argv[]){
         char alpa[27];
         int i;
         for (i = 0; i < sizeof(alpa); i++){
-                // do not use index based iteration for the alpa array
+                // DO NOT use bracket for alpa array. eg: alpa[i] 
                 *alpa = 'a' + i;
-                //printf("alpa[%d] = %c\n", i, *(alpa+i));
         }
         
         // the final output should be "abc......z" only
-        printf("%s\n", alpa);
+        printf("%s\n", alpa); 	// DO NOT modify this line
         return 0;
 }
