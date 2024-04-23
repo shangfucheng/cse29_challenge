@@ -1,4 +1,11 @@
 # Coding Challenge Explanation
+### Steps to start: 
+1. SSH into your ieng6 server
+2. Accept github classroom invite
+3. Clone github repo to your ieng6 server
+4. Once finish, push to your github repo
+5. Submmit on gradescope from your github
+6. During the Coding Challenge, you should be only working on the ieng6 terminal. Do not open any web pages except github and gradescope. You can find all vim and gdb commands in README.
 
 ## Part 1: Debugging the Given Code
 
@@ -20,7 +27,7 @@ The expected output should be:
 abcdefghijklmnopqrstuvwxyz
 ```
 
-## Part 2: Implementing `char* word_finder(char *target_str, char *word_to_find)` Function
+## Part 2: Implement `char* word_finder(char *target_str, char *word_to_find)` Function
 
 ### Problem Description
 You are tasked with implementing the `word_finder` function in `word_finder.c`, which finds the first occurrence of a substring within a string. 
