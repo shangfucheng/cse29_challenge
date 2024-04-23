@@ -20,7 +20,7 @@ The expected output should be:
 abcdefghijklmnopqrstuvwxyz
 ```
 
-## Part 2: Implementing strstr Function
+## Part 2: Implementing `char* word_finder(char *target_str, char *word_to_find)` Function
 
 ### Problem Description
 You are tasked with implementing the `word_finder` function in `word_finder.c`, which finds the first occurrence of a substring within a string. 
