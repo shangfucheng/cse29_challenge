@@ -47,7 +47,7 @@ char* word_finder(char* target_str, int target_len, char* word_to_find, int word
 
 The `word_finder` function takes four arguments:
 
-- **target_str:** The string that will be searched for. (this is user input, can be any string with Max length of 300)
+- **target_str:** The string that will be searched for. (this is user input, can be any string with Max length of 300) `You can assume the target_str is always longer than word_to_find`
 - **target_len:** The length of `target_str`.
 - **word_to_find:** The string to search for in `target_str`. (we will test the same word during grading, so DO NOT change)
 - **word_len:** The length of the `word_to_find` string. 
