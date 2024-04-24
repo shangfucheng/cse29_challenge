@@ -1,52 +1,73 @@
 # Coding Challenge Explanation
 ### Steps to start: 
 1. SSH into your ieng6 server
-2. Accept github classroom invite
-3. Clone github repo to your ieng6 server
-4. Once finish, push to your github repo
-5. Submmit on gradescope from your github
-6. During the Coding Challenge, you should be only working on the ieng6 terminal. Do not open any web pages except github and gradescope. You can find all vim and gdb commands in README.
+2. Clone github repo to your ieng6 server
+3. Once finish, push to your github repo
+4. Submit on gradescope from your github
+5. You can only see error checks in gradescope, no test cases will be shown. 
+6. Please check off with the teaching staff there when you finish, they will need to manually delete the repo in your ieng6 server and your remote repo.
+7. During the Coding Challenge, you should be only working on the ieng6 terminal. Do not open any web pages except your github page and gradescope. You can find all vim, gdb and git commands in the bottom of this file.
 
 ## Part 1: Debugging the Given Code
 
 ### Problem Description
-You are given a piece of code in `debug.c` that is intended to print out all alphabet characters from 'a' to 'z' inclusive. However, there are some issues with the code preventing it from functioning correctly. Your task is to debug the code and ensure it prints out the correct characters.
+You are given a piece of code in `debug.c` that is intended to print out all alphabet characters from 'a' to 'z' inclusive. However, there are some issues with the code preventing it from functioning correctly. Your task is to debug the code and ensure it prints out the correct characters.Please do not modify the lines that has comments "DO NOT Modify". 
+### Note: DO NOT use Brackets to access array values in Part 1, eg: arry[i]
 
 ### Debugging Steps
-1. **Identify the Issue**: Start by carefully reading through the code to identify any obvious errors or logical mistakes. There are only 26 characters in alphabet.
+1. **Identify the Issue**: Start by carefully reading through the code to identify any obvious errors or logical mistakes.
 2. **Analyze Variable Values**: Use print statements or a debugger(gdb) to inspect the values of variables during runtime. This can help pinpoint where the code is deviating from the expected behavior.
 3. **Fix the Code**: Once the issue is identified, make the necessary corrections to fix the code and ensure it prints out all alphabet characters from 'a' to 'z' only. 
 4. **Compile and Test**: Use the following command to compile the debug.c code.
 ```
 gcc -o debug -Wall -g -std=gnu99 debug.c
 ```
+5. **To Run Your Code**: 
+```
+./debug
+```
 
 ### Expected Output
-The expected output should be: 
+The expected output should be the following with no leading and trailing spaces: 
 ```C
 abcdefghijklmnopqrstuvwxyz
 ```
 
-## Part 2: Implement `char* word_finder(char *target_str, char *word_to_find)` Function
+## Part 2: Implement `word_finder(...)` Function
 
 ### Problem Description
-You are tasked with implementing the `word_finder` function in `word_finder.c`, which finds the first occurrence of a substring within a string. 
+The task entails the implementation of the `word_finder` function within the `word_finder.c` file. This function is designed to identify the first occurrence of a specified string within another string. It should be implemented without reliance on any additional libraries beyond those provided. 
 
-### Explanation
-The `word_finder` function takes one input strings: the `target_str` and one given string `word_to_find` (given in your program). It searches for the `word_to_find` within the `target_str` and returns a pointer to the first occurrence of the `word_to_find` in the `target_str`. If `word_to_find` is not found, the function returns `NULL`.
+**Function Signature:**
+```c
+char* word_finder(char* target_str, int target_len, char* word_to_find, int word_len );
+```
+
+### Explanation:
+
+The `word_finder` function takes four arguments:
+
+- **target_str:** The string that will be searched for. (this is user input, can be any string with Max length of 300)
+- **target_len:** The length of `target_str`.
+- **word_to_find:** The string to search for in `target_str`. (we will test the same word during grading, so DO NOT change)
+- **word_len:** The length of the `word_to_find` string. 
+
+**Return value:**  
+Returns a pointer to the first occurrence of the `word_to_find` in the `target_str`. If `word_to_find` is not found, the function returns `NULL`.
+
 
 #### Algorithm
 1. Iterate through the `target_str`.
 2. For each character in the `target_str`, compare it with the first character of the `word_to_find`.
 3. If the characters match, compare subsequent characters until either the entire `word_to_find` is matched or a mismatch is found.
 4. If the entire `word_to_find` is matched, return a pointer to the start of the match in the `target_str`.
-5. If no match is found, continue searching through the haystack.
+5. If no match is found, continue searching through the target_str.
 6. If the end of the `target_str` is reached without finding a match, return `NULL` to indicate no match found.
 
 ### Example Input & Output:
 ```
 // check the word_to_find in your word_finder.c.
-char* word_to_find = "29";  
+char* word_to_find = "world";  
 
 // terminal input
 Enter the target_str: hello, world
@@ -57,6 +78,10 @@ Enter the target_str: hello, world
 ### Compile and Test:
 ```
 gcc -o word_finder -Wall -g -std=gnu99 word_finder.c
+```
+### Run the Program:
+```
+./word_finder
 ```
 
 
@@ -182,3 +207,71 @@ gcc -o word_finder -Wall -g -std=gnu99 word_finder.c
 ## Additional Information
 
 - `help [command]`: Display help information for the specified command or l
+
+
+# Git Commands Cheat Sheet
+
+## Creating Repositories
+
+- `git clone <repository_url>`: Clone an existing repository into a new directory.
+- `git clone <repository_url> <directory_name>`: Clone a repository into a specific directory.
+
+## Basic Snapshotting
+
+- `git add <file>`: Add a file to the staging area.
+- `git add .`: Add all changes to the staging area.
+- `git commit -m "Commit message"`: Commit staged changes with a message.
+- `git commit -am "Commit message"`: Add all changes and commit with a message (excluding untracked files).
+
+## Branching & Merging
+
+- `git branch`: List all branches.
+- `git branch <branch_name>`: Create a new branch.
+- `git checkout <branch_name>`: Switch to a different branch.
+- `git checkout -b <branch_name>`: Create and switch to a new branch.
+- `git merge <branch_name>`: Merge changes from another branch into the current branch.
+- `git merge --abort`: Abort the merge process and reset the changes.
+
+## Remote Repositories
+
+- `git remote add <name> <url>`: Add a new remote repository.
+- `git remote -v`: List all remote repositories.
+- `git push <remote_name> <branch_name>`: Push changes to a remote repository.
+- `git pull <remote_name> <branch_name>`: Fetch changes from a remote repository and merge them into the current branch.
+- `git fetch <remote_name>`: Fetch changes from a remote repository.
+
+## Inspecting Changes
+
+- `git status`: Show the status of the working directory and staging area.
+- `git log`: Show commit history.
+- `git log --oneline`: Show abbreviated commit history.
+- `git diff`: Show changes between the working directory and the staging area.
+- `git diff --staged`: Show changes between the staging area and the repository.
+
+## Undoing Changes
+
+- `git checkout -- <file>`: Discard changes in the working directory for a specific file.
+- `git reset HEAD <file>`: Unstage changes in the staging area for a specific file.
+- `git reset --soft HEAD~1`: Undo the last commit and move changes to the staging area.
+- `git reset --hard HEAD~1`: Undo the last commit and discard changes.
+
+## Tagging
+
+- `git tag`: List all tags.
+- `git tag <tag_name>`: Create a new tag for the current commit.
+- `git tag -a <tag_name> -m "Tag message"`: Create an annotated tag with a message.
+- `git push --tags`: Push tags to a remote repository.
+
+## Additional Commands
+
+- `git clean -n`: List untracked files that will be removed.
+- `git clean -f`: Remove untracked files from the working directory.
+- `git stash`: Stash changes in the working directory.
+- `git stash pop`: Apply stashed changes to the working directory and remove them from the stash.
+
+## Helpful Tips
+
+- `git help <command>`: Show help information for a specific command.
+- `git <command> --help`: Show help information for a specific command.
+- `git <command> -h`: Show help information for a specific command.
+
